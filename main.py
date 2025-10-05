@@ -1269,22 +1269,6 @@ def listar_funcionarios(db_func):
 
         # Não tinha pensado sobre se a lista crescer muito, que vou percorrer a lista duas vezes
 
-        func_ativos = []
-        func_inativos = []
-
-        for func in db_func.values():
-            if func.ativo:
-                func_ativos = func
-            else:
-                func_inativos = func
-
-        if filtro == "ativos":
-            func_filtrados = func_ativos
-        elif filtro == "inativos":
-            func_filtrados = func_inativos
-        else:
-            func_filtrados = func_ativos + func_inativos
-
         if filtro == "ativos":
 
             func_filtrados = [func for func in db_func.values() if func.ativo]
